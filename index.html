@@ -55,7 +55,7 @@
 </head>
 <body>
 
-    <h1>made by Leandra</h1>
+    <h1 id="title">made by Leandra</h1>
     <div id="quote">guess what it is</div>
     <button onclick="generateQuote()">Tap</button>
     <div class="footer">Made for Gea and Gea only</div>
@@ -91,6 +91,7 @@
         function generateQuote() {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             document.getElementById('quote').innerText = quotes[randomIndex];
+            document.getElementById('title').innerText = "I Believe in You"; // Mengubah teks h1
         }
     </script>
 
