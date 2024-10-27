@@ -23,6 +23,29 @@
             color: #da291c; /* Warna merah Manchester United */
         }
 
+        #slideshow {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px; /* Sudut melengkung */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+            margin-bottom: 20px;
+        }
+
+        #slideshow img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .active {
+            opacity: 1;
+        }
+
         #quote {
             margin: 20px;
             font-size: 20px;
@@ -60,6 +83,14 @@
 <body>
 
     <h1 id="title">made by Leandra</h1>
+    
+    <div id="slideshow">
+        <img class="active" src="https://pbs.twimg.com/media/DPSPhWvUIAAguwe.jpg" alt="Cute Puppy 1">
+        <img src="https://pbs.twimg.com/profile_images/735146712189177856/HJLfeRNj_400x400.jpg" alt="Cute Puppy 2">
+        <img src="https://pbs.twimg.com/media/CeQVyhrUIAAbekl.jpg" alt="Cute Puppy 3">
+        <img src="https://pbs.twimg.com/profile_images/1675870569131278339/pmqe6_3L_400x400.jpg" alt="Cute Puppy 4">
+    </div>
+
     <div id="quote">guess what it is</div>
     <button onclick="generateQuote()">Tap</button>
     <div class="footer">Made for Gea and Gea only</div>
@@ -129,11 +160,34 @@
             "You are capable of incredible things; never doubt it."
         ];
 
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#slideshow img');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000); // Ganti slide setiap 3 detik
+
         function generateQuote() {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             document.getElementById('quote').innerText = quotes[randomIndex];
             document.getElementById('title').innerText = "I Believe in You"; // Mengubah teks h1
         }
+
+        // Tampilkan slide pertama
+        showSlide(currentSlide);
     </script>
 
 </body>
