@@ -13,26 +13,27 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            background-color: #ffeef8; /* Latar belakang pink muda */
         }
 
         h1 {
             margin-bottom: 20px;
             font-size: 24px;
             text-align: center;
+            color: #d5006d; /* Warna tulisan judul */
         }
 
         #quote {
             margin: 20px;
             font-size: 20px;
             text-align: center;
-            color: #333;
+            color: #333; /* Warna kutipan */
         }
 
         button {
             padding: 20px 40px;
             font-size: 20px;
-            background-color: #4CAF50;
+            background-color: #d5006d; /* Warna tombol */
             color: white;
             border: none;
             border-radius: 5px;
@@ -41,7 +42,14 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #c51162; /* Warna tombol saat hover */
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #d5006d; /* Warna tulisan footer */
+            text-align: center;
         }
     </style>
 </head>
@@ -50,6 +58,7 @@
     <h1>Kutipan Motivasi</h1>
     <div id="quote">Tekan tombol di bawah untuk mendapatkan motivasi!</div>
     <button onclick="generateQuote()">Dapatkan Kutipan</button>
+    <div class="footer">Made for Gea and Gea only</div>
 
     <script>
         const quotes = [
