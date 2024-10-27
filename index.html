@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutipan Motivasi</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        #quote {
+            margin: 20px;
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        button {
+            padding: 20px 40px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kutipan Motivasi</h1>
+    <div id="quote">Tekan tombol di bawah untuk mendapatkan motivasi!</div>
+    <button onclick="generateQuote()">Dapatkan Kutipan</button>
+
+    <script>
+        const quotes = [
+            "Kebangkitan terbesar datang setelah kejatuhan terburuk.",
+            "Setiap hari adalah kesempatan baru untuk menjadi lebih baik.",
+            "Kesuksesan tidak datang kepada orang yang menunggu, tetapi kepada mereka yang berjuang.",
+            "Jangan takut untuk gagal. Takutlah untuk tidak mencoba.",
+            "Keberhasilan adalah hasil dari keputusan yang tepat dan usaha yang tidak kenal lelah."
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
